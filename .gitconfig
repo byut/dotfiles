@@ -1,0 +1,14 @@
+[core]
+    editor = nvim
+    ignorecase = false
+[alias]
+    ps = "!git push origin HEAD"
+    st = status
+    c = commit
+    i = init
+    a = add
+[credential]
+    helper = store
+[user]
+    name = Volodymyr But
+    email = vbut.dev+github@gmail.com
