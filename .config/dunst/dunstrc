@@ -1,0 +1,66 @@
+#
+#  _____________  ______   ________________
+#  ___  __ \_  / / /__  | / /_  ___/__  __/
+#  __  / / /  / / /__   |/ /_____ \__  /   
+#  _  /_/ // /_/ / _  /|  / ____/ /_  /    
+#  /_____/ \____/  /_/ |_/  /____/ /_/     
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+[global]
+width = 400
+height = 300
+origin = top-right
+offset = 15x15
+
+horizontal_padding = 10
+padding = 10
+
+text_icon_padding = 15
+
+frame_width = 1
+frame_color = "#2e9ef4"
+
+stack_duplicates = true
+hide_duplicate_count = false
+
+notification_limit = 0
+
+gap_size = 2
+
+markup = full
+format = "<b>%s</b>\n%b"
+font = HackNerdFont 9
+
+vertical_alignment = center
+alignment = left
+
+show_indicators = yes
+
+icon_theme = Adwaita
+icon_position = left
+
+min_icon_size = 32
+max_icon_size = 48
+
+mouse_left_click = close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = close_all
+
+[urgency_low]
+background = "#222222"
+foreground = "#888888"
+timeout = 10
+
+[urgency_normal]
+background = "#222222"
+foreground = "#888888"
+timeout = 10
+
+[urgency_critical]
+background = "#f00000"
+foreground = "#ffffff"
+frame_color = "#ff0000"
+timeout = 0
+
+# vim: ft=cfg
