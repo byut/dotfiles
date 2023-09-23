@@ -26,6 +26,11 @@ alias vim="nvim"
 alias g="git"
 alias l="less"
 
+alias tm="tmux"
+alias tml="tmux list-sessions"
+alias tms="tmux new-session -s"
+alias tma="tmux attach-session &> /dev/null || tmux new-session -s $USER -c ~"
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Zsh Plugin Manager (zplug)
 
