@@ -10,6 +10,8 @@ import XMonad.Layout.Renamed
 import XMonad.Hooks.ManageDocks
 import Graphics.X11.ExtraTypes.XF86
 
+import XMonad.Util.SpawnOnce
+
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
@@ -112,6 +114,13 @@ myKeys conf@(XConfig { XMonad.modMask = modm }) = M.fromList $
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
 ---------------------------------------------------------------------------------------------------------------
+-- Startup Hook -----------------------------------------------------------------------------------------------
+
+myStartupHook = do
+    spawnOnce "~/.fehbg"
+    spawnOnce "picom -I1 -O1 -D0"
+    spawnOnce "dunst"
+    
 -- Main -------------------------------------------------------------------------------------------------------
 
 main = xmonad $ def {
@@ -126,5 +135,6 @@ main = xmonad $ def {
     keys = myKeys,
 
     -- Hooks
-    layoutHook = myLayoutHook
+    layoutHook = myLayoutHook,
+    startupHook = myStartupHook
 }
