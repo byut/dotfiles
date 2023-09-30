@@ -118,7 +118,7 @@ myKeys conf@(XConfig { XMonad.modMask = modm }) = M.fromList $
 
 myStartupHook = do
     spawnOnce "~/.fehbg"
-    spawnOnce "picom -I1 -O1 -D0"
+    spawnOnce "picom --config ~/.config/picom/picom.conf"
     spawnOnce "dunst"
     
 -- Main -------------------------------------------------------------------------------------------------------
