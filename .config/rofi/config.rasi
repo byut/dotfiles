@@ -1,0 +1,49 @@
+* {
+    font: "UbuntuMono Nerd Font 14";
+    
+    border-color: #2E9EF4;
+    background-color: #000000;
+    foreground-color: #FFFFFF;
+    background-normal: #000000;
+    foreground-normal: #888888;
+    background-alternate: #000000;
+    foreground-alternate: #888888;
+    background-selected: #333333;
+    foreground-selected: #FFFFFF;
+}
+
+window {
+    anchor: north;
+    location: center;
+    y-offset: -150;
+    width: 800;
+    margin: 0;
+    padding: 5;
+    border: 2px solid;
+    border-color: @border-color;
+    background-color: @background-color;
+}
+
+mainbox { padding: 5 0; children: ["inputbar", "listview"]; }
+inputbar { padding: 0 10; children: ["entry"]; }
+
+entry { text-color: @foreground-color; }
+listview { fixed-height: false; scrollbar: false; spacing: 0; lines: 9; }
+
+element { padding: 3 10; background-color: transparent; text-color: @foreground-color; }
+
+element normal.normal { background-color: @background-normal; text-color: @foreground-normal; }
+element normal.urgent { background-color: @background-normal; text-color: @foreground-normal; }
+element normal.active { background-color: @background-normal; text-color: @foreground-normal; }
+element alternate.normal { background-color: @background-alternate; text-color: @foreground-alternate; }
+element alternate.urgent { background-color: @background-alternate; text-color: @foreground-alternate; }
+element alternate.active { background-color: @background-alternate; text-color: @foreground-alternate; }
+element selected.normal { background-color: @background-selected; text-color: @foreground-selected; }
+element selected.urgent { background-color: @background-selected; text-color: @foreground-selected; }
+element selected.active { background-color: @background-selected; text-color: @foreground-selected; }
+
+configuration {
+    modi: ["drun","window"];
+}
+
+// vim: ft=rasi
