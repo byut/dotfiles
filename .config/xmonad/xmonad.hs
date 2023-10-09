@@ -7,6 +7,7 @@ import XMonad.Layout.WindowNavigation
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Renamed
 
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import Graphics.X11.ExtraTypes.XF86
 
@@ -49,6 +50,8 @@ myLayoutHook = avoidStruts $ renamed [Replace "Tiled"] tiled ||| renamed [Replac
 
 myKeys conf@(XConfig { XMonad.modMask = modm }) = M.fromList $
     [
+        ((modm, xK_d), spawn "rofi -show drun"),
+        ((modm, xK_w), spawn "rofi -show window"),
         ((modm, xK_Return), spawn $ XMonad.terminal conf),
         ((modm, xK_q), kill),
 
@@ -123,7 +126,7 @@ myStartupHook = do
     
 -- Main -------------------------------------------------------------------------------------------------------
 
-main = xmonad $ def {
+main = xmonad $ ewmh $ def {
     terminal = myTerminal,
     workspaces = myWorkspaces,
 
