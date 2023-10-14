@@ -92,6 +92,9 @@ myKeys conf@(XConfig { XMonad.modMask = modm }) = M.fromList $
         ((0, xF86XK_AudioNext), spawn "playerctl next"),
         ((0, xF86XK_AudioStop), spawn "playerctl stop"),
 
+        -- Switch keyboard layout
+        ((modm, xK_Escape), spawn "~/.local/bin/xkb-switch"),
+
         -- Take a screenshot
         ((mod4Mask .|. shiftMask, xK_s), spawn "maim -u -s | xclip -selection clipboard -t image/png"),
         ((mod4Mask, xK_s), spawn "maim -u | xclip -selection clipboard -t image/png"),

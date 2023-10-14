@@ -1,0 +1,13 @@
+#!/bin/sh
+
+layout=$(setxkbmap -query | grep layout | awk '{print $2}')
+
+if [ $layout == "us,us" ]; then
+    setxkbmap "de,us"
+elif [ $layout == "de,us" ]; then
+    setxkbmap "ru,us"
+elif [ $layout == "ru,us" ]; then
+    setxkbmap "ua,us"
+else
+    setxkbmap "us,us"
+fi
