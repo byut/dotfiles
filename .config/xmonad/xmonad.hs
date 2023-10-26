@@ -9,9 +9,14 @@ import XMonad.Layout.Renamed
 
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
-import Graphics.X11.ExtraTypes.XF86
+
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
 
 import XMonad.Util.SpawnOnce
+
+import Graphics.X11.ExtraTypes.XF86
 
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
@@ -55,11 +60,17 @@ myKeys conf@(XConfig { XMonad.modMask = modm }) = M.fromList $
         ((modm, xK_Return), spawn $ XMonad.terminal conf),
         ((modm, xK_q), kill),
 
+        -- Toggle polybar
+        ((modm, xK_p), spawn $ "polybar-msg cmd toggle"),
+
         -- Toggle layouts
         ((modm, xK_t), withFocused $ windows . W.sink),
         ((modm, xK_m), sendMessage $ JumpToLayout "Tiled"),
         ((modm, xK_f), sendMessage $ JumpToLayout "Full"),
         ((modm, xK_space), sendMessage NextLayout),
+
+        ((modm .|. shiftMask, xK_m), sequence_ [(spawn $ "polybar-msg cmd show"), (sendMessage $ JumpToLayout "Tiled")]),
+        ((modm .|. shiftMask, xK_f), sequence_ [(spawn $ "polybar-msg cmd hide"), (sendMessage $ JumpToLayout "Full")]),
 
         -- Navigate through open windows
         ((modm, xK_h), sendMessage $ Go L),
@@ -127,20 +138,33 @@ myStartupHook = do
     spawnOnce "picom --config ~/.config/picom/picom.conf"
     spawnOnce "dunst"
     
+---------------------------------------------------------------------------------------------------------------
+-- Status Bar -------------------------------------------------------------------------------------------------
+
+mySB = statusBarProp "polybar" (pure def {
+    ppLayout = const "",
+    ppTitle = const "",
+    ppVisible = wrap "(" ")"
+})
+
+---------------------------------------------------------------------------------------------------------------
 -- Main -------------------------------------------------------------------------------------------------------
 
-main = xmonad $ ewmh $ def {
+main :: IO ()
+main = xmonad $ 
+       ewmh $ withEasySB mySB defToggleStrutsKey $ myConfig
+
+---------------------------------------------------------------------------------------------------------------
+-- Config -----------------------------------------------------------------------------------------------------
+
+myConfig = def {
     terminal = myTerminal,
     workspaces = myWorkspaces,
-
     borderWidth = myBorderWidth,
     normalBorderColor = myNormalBorderColor,
     focusedBorderColor = myFocusedBorderColor,
-
     modMask = myModMask,
     keys = myKeys,
-
-    -- Hooks
     layoutHook = myLayoutHook,
     startupHook = myStartupHook
 }
