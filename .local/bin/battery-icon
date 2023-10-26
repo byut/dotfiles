@@ -1,0 +1,17 @@
+#!/bin/sh
+
+p=$(acpi |& grep -oP '\d{2,3}(?=%)')
+if [ -z $p ]; then
+    echo 
+    exit 0
+fi
+
+if [ $p -ge 90 ]; then
+    echo 
+elif [ $p -ge 60 ]; then
+    echo 
+elif [ $p -ge 30 ]; then
+    echo 
+else
+    echo 
+fi
