@@ -10,7 +10,7 @@
 [global]
 width = 400
 height = 300
-origin = top-right
+origin = bottom-right
 offset = 15x15
 
 horizontal_padding = 10
