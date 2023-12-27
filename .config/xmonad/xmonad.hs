@@ -16,6 +16,8 @@ import XMonad.Hooks.StatusBar.PP
 
 import XMonad.Util.SpawnOnce
 
+import XMonad.Hooks.SetWMName
+
 import Graphics.X11.ExtraTypes.XF86
 
 import qualified Data.Map as M
@@ -137,6 +139,7 @@ myStartupHook = do
     spawnOnce "~/.fehbg"
     spawnOnce "picom --config ~/.config/picom/picom.conf"
     spawnOnce "dunst"
+    setWMName "LG3D"
     
 ---------------------------------------------------------------------------------------------------------------
 -- Status Bar -------------------------------------------------------------------------------------------------
