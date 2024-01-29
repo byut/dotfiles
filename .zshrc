@@ -14,6 +14,8 @@ ZSH_CUSTOM="$HOME/.dotfiles/oh-my-zsh"
 
 ZSH_THEME="colorless"
 
+DISABLE_AUTO_TITLE="true"
+
 if [ -d $ZSH ] && [ -f $ZSH/oh-my-zsh.sh ]; then
     source $ZSH/oh-my-zsh.sh
 fi
