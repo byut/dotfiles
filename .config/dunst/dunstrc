@@ -14,7 +14,7 @@ follow = mouse
 width = 350
 height = 300
 offset = 20x20
-origin = top-left
+origin = top-right
 
 gaps = true
 gap_size = 10
