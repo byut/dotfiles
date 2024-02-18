@@ -108,6 +108,12 @@ seat seat0 xcursor_theme Vanilla-DMZ-AA
 output * background #000000 solid_color
 
 #
+# Autostart
+# ---
+
+exec_always dunst
+
+#
 # Floating Modifier
 #
 # Drag floating windows by holding down $mod and left mouse button. Resize
