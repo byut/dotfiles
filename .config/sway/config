@@ -64,6 +64,9 @@ set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
 set $primary  eDP-1
 set $external HDMI-A-1
 
+bindswitch --reload --locked lid:on output $primary disable
+bindswitch --reload --locked lid:off output $primary enable
+
 #
 # Touchpad
 # ---
