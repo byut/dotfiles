@@ -83,7 +83,7 @@ input type:touchpad pointer_accel 0
 
 set $mod Mod1
 
-input type:keyboard xkb_layout us,de
+input type:keyboard xkb_layout us,de,ru,ua
 input type:keyboard xkb_options grp:win_space_toggle
 input type:keyboard repeat_delay 350
 input type:keyboard repeat_rate 45
