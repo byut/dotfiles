@@ -139,16 +139,16 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
 
-workspace $ws1  output $external
-workspace $ws2  output $external
-workspace $ws3  output $external
-workspace $ws4  output $external
-workspace $ws5  output $external
-workspace $ws6  output $primary
-workspace $ws7  output $primary
-workspace $ws8  output $primary
-workspace $ws9  output $primary
-workspace $ws10 output $primary
+# workspace $ws1  output $external
+# workspace $ws2  output $external
+# workspace $ws3  output $external
+# workspace $ws4  output $external
+# workspace $ws5  output $external
+# workspace $ws6  output $primary
+# workspace $ws7  output $primary
+# workspace $ws8  output $primary
+# workspace $ws9  output $primary
+# workspace $ws10 output $primary
 
 #
 # Key Bindings
@@ -206,6 +206,10 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+bindsym $mod+Shift+Control+h move workspace to output left
+bindsym $mod+Shift+Control+j move workspace to output down
+bindsym $mod+Shift+Control+k move workspace to output up
+bindsym $mod+Shift+Control+l move workspace to output right
 
 #
 # Scratchpad
