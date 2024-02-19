@@ -41,6 +41,16 @@ set $bordersize_tiling   2
 set $bordersize_floating 2
 
 #
+# Primary and External Outputs
+# ---
+
+set $primary  eDP-1
+set $external HDMI-A-1
+
+bindswitch --reload --locked lid:on output $primary disable
+bindswitch --reload --locked lid:off output $primary enable
+
+#
 # Default Applications
 # ---
 
@@ -55,17 +65,7 @@ set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
     --ab  "$background"        --af  "$foreground"        \
     --scb "$background"        --scf "$foreground"        \
     --bdr "$border_inactive"                              \
-    --fn "$fontname $fontsize" --hp 9
-
-#
-# Primary and External Outputs
-# ---
-
-set $primary  eDP-1
-set $external HDMI-A-1
-
-bindswitch --reload --locked lid:on output $primary disable
-bindswitch --reload --locked lid:off output $primary enable
+    --fn "$fontname $fontsize" --hp 9 -m "$primary"
 
 #
 # Touchpad
@@ -210,6 +210,7 @@ bindsym $mod+Shift+Control+h move workspace to output left
 bindsym $mod+Shift+Control+j move workspace to output down
 bindsym $mod+Shift+Control+k move workspace to output up
 bindsym $mod+Shift+Control+l move workspace to output right
+
 
 #
 # Scratchpad
