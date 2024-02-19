@@ -246,4 +246,4 @@ bar {
     }
 }
 
-# include /etc/sway/config.d/*
+include /etc/sway/config.d/*
