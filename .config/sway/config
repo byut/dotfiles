@@ -223,6 +223,22 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #
+# Resize mode
+# ---
+
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+    bindsym h resize shrink width  10px
+    bindsym j resize grow   height 10px
+    bindsym k resize shrink height 10px
+    bindsym l resize grow   width  10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#
 # Status Bar:
 #
 # For more information about this section, see: 'man 5 sway-bar'
