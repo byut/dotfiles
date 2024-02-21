@@ -65,7 +65,7 @@ set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
     --ab  "$background"        --af  "$foreground"        \
     --scb "$background"        --scf "$foreground"        \
     --bdr "$border_inactive"                              \
-    --fn "$fontname $fontsize" --hp 9 -m "$primary"
+    --fn "$fontname $fontsize" --hp 9 -m "all"
 
 #
 # Touchpad
