@@ -223,6 +223,21 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #
+# Screenshot mode
+# ---
+
+bindsym $mod+Shift+s mode "screenshot"
+
+mode "screenshot" {
+    bindsym a exec /usr/share/sway/scripts/grimshot copy area; mode "default"
+    bindsym s exec /usr/share/sway/scripts/grimshot copy output; mode "default"
+    bindsym w exec /usr/share/sway/scripts/grimshot copy window; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#
 # Resize mode
 # ---
 
