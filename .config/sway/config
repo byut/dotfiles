@@ -156,7 +156,7 @@ set $ws10 "10"
 
 bindsym $mod+Shift+c kill
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+BackSpace exec sway exit
+# bindsym $mod+Shift+BackSpace exec sway exit
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+p exec $menu
 
@@ -248,6 +248,21 @@ mode "resize" {
     bindsym j resize grow   height 10px
     bindsym k resize shrink height 10px
     bindsym l resize grow   width  10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#
+# Exit mode
+# ---
+
+bindsym $mod+Shift+BackSpace mode "exit"
+
+mode "exit" {
+    bindsym e exec swaymsg exit
+    bindsym s exec shutdown -h now
+    bindsym r exec reboot
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
