@@ -66,6 +66,9 @@ set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
     --scb "$background"        --scf "$foreground"        \
     --bdr "$border_inactive"                              \
     --fn "$fontname $fontsize" --hp 9 -m "all"
+set $lock waylock -log-level error \
+    -fork-on-lock -ignore-empty-password \
+    -init-color 0x000000 -input-color 0x222222 -fail-color 0xff0000
 
 #
 # Touchpad
@@ -112,6 +115,8 @@ output * background #000000 solid_color
 # ---
 
 exec_always dunst
+exec swayidle -w \
+    before-sleep "$lock"
 
 #
 # Floating Modifier
@@ -263,6 +268,8 @@ mode "exit" {
     bindsym e exec swaymsg exit
     bindsym s exec shutdown -h now
     bindsym r exec reboot
+    bindsym p exec systemctl suspend; mode "default"
+    bindsym l exec $lock; mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
