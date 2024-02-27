@@ -1,16 +1,12 @@
 #!/bin/bash
 
-#
-# Battery Info
-# ---
+function join_by {
+    local d=${1-} f=${2-}
+    if shift 2; then
+        printf %s "$f" "${@/#/$d}"
+    fi
+}
 
-charge_full=$(cat /sys/class/power_supply/BATT/charge_full)
-charge_now=$(cat /sys/class/power_supply/BATT/charge_now)
-
-modules=(
-	"Battery: $(($charge_now * 100 / $charge_full))%"
-	"$(date +"%a %F %H:%M")"
-)
-
-printf "%s" "${modules[0]}"
-printf " | %s" "${modules[@]:1}"
+join_by " | " \
+    "Battery: $(($(cat /sys/class/power_supply/BATT/charge_now) * 100 / $(cat /sys/class/power_supply/BATT/charge_full)))%" \
+    "$(date +"%a %F %H:%M")"
