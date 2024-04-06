@@ -299,4 +299,6 @@ bar {
     }
 }
 
+for_window [app_id="org.telegram.desktop"] floating enable
+
 include /etc/sway/config.d/*
