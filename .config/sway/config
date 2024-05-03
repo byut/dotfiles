@@ -35,8 +35,8 @@ set $background_inactive #222222
 # Borders & Gaps
 # ...
 
-set $innergapsize        0
-set $outergapsize        0
+set $innergapsize        7
+set $outergapsize        4
 set $bordersize_tiling   2
 set $bordersize_floating 2
 
