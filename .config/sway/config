@@ -281,6 +281,8 @@ mode "exit" {
 # For more information about this section, see: 'man 5 sway-bar'
 # ---
 
+bindsym $mod+Shift+b exec swaymsg bar mode toggle
+
 bar {
     height $fontheight
     font pango:$fontname $fontsize
