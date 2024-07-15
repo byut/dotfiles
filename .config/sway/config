@@ -66,9 +66,10 @@ set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
     --scb "$background"        --scf "$foreground"        \
     --bdr "$border_inactive"                              \
     --fn "$fontname $fontsize" --hp 9 -m "all"
-set $lock waylock -log-level error \
-    -fork-on-lock -ignore-empty-password \
-    -init-color 0x000000 -input-color 0x222222 -fail-color 0xff0000
+set $lock gtklock
+# set $lock waylock -log-level error \
+#     -fork-on-lock -ignore-empty-password \
+#     -init-color 0x000000 -input-color 0x222222 -fail-color 0xff0000
 
 #
 # Touchpad
