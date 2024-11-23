@@ -251,9 +251,9 @@ bindsym $mod+r mode "resize"
 
 mode "resize" {
     bindsym h resize shrink width  10px
-    bindsym j resize grow   height 10px
+    bindsym j resize grow   height 15px
     bindsym k resize shrink height 10px
-    bindsym l resize grow   width  10px
+    bindsym l resize grow   width  15px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
