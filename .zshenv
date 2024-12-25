@@ -3,3 +3,7 @@
 
 [ -f "/home/byut/.ghcup/env" ] && source "/home/byut/.ghcup/env" # ghcup-env
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# --- #
+
+export _JAVA_AWT_WM_NONREPARENTING=1
