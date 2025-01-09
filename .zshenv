@@ -4,6 +4,8 @@
 [ -f "/home/byut/.ghcup/env" ] && source "/home/byut/.ghcup/env" # ghcup-env
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+[ -x "go" ] && export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
 # --- #
 
 export _JAVA_AWT_WM_NONREPARENTING=1
