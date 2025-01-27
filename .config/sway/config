@@ -54,7 +54,7 @@ bindswitch --reload --locked lid:off output $primary enable
 # Default Applications
 # ---
 
-set $term foot
+set $term ghostty
 set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
     --tb  "$background_active" --tf  "$foreground_active" \
     --fb  "$background"        --ff  "$foreground"        \
