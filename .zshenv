@@ -9,3 +9,4 @@
 # --- #
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
