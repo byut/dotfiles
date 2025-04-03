@@ -10,3 +10,8 @@
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
