@@ -55,7 +55,7 @@ bindswitch --reload --locked lid:off output $primary enable
 # ---
 
 set $term ghostty
-set $menu BEMENU_BACKEND=wayland bemenu-run -b            \
+set $menu BEMENU_BACKEND=wayland bemenu-run               \
     --tb  "$background_active" --tf  "$foreground_active" \
     --fb  "$background"        --ff  "$foreground"        \
     --nb  "$background"        --nf  "$foreground"        \
@@ -288,7 +288,7 @@ bar {
     height $fontheight
     font pango:$fontname $fontsize
     status_command while $HOME/.config/sway/scripts/status.sh; do sleep 15; done
-    position    bottom
+    position    top
     tray_output none
 
     colors {
