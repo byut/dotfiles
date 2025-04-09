@@ -1,6 +1,6 @@
 [user]
     name  = Volodymyr But
-    email = vbut.dev+git@gmail.com
+    email = volodymyr@byut.dev
 
 [alias]
     aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1: \\2/g'
